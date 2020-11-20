@@ -2,7 +2,7 @@
 
 **Under Construction**
 
-- `color-bar`: popular color bars used in seismic studies
+We will share plotting scripts and experience in this site, e.g., [GMT](https://www.generic-mapping-tools.org/), [Python](https://matplotlib.org/), [Illustrator](https://www.adobe.com/cn/products/illustrator.html) and [Blender](https://www.blender.org/).
 
 
 ## Gallery
@@ -10,6 +10,11 @@
 - [GMT gallery](https://docs.generic-mapping-tools.org/latest/gallery.html)
 - [GMT-China gallery](https://gmt-china.org/gallery)
 - [GMT-China blog](https://gmt-china.org/blog)
+
+
+## Color Bars
+
+- [color-bars](color-bars): popular color bars used in seismic studies
 
 
 ## Examples
