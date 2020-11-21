@@ -51,3 +51,9 @@ We will share plotting scripts and experience in this site, e.g., [GMT](https://
 - [slab1.0模型绘制指南](https://earthquake.usgs.gov/data/slab/SlabInstructions.php)
     - 介绍了基本的绘制2D数据的方法： psclip, grdimage, grdcontour, psxy, xyz2grd
 
+## References
+
+- [跟Science文章学绘图](https://mp.weixin.qq.com/s/8EFdXRbBr3huqZRETcyynQ)
+- [The misuse of colour in science communication](https://www.nature.com/articles/s41467-020-19160-7)
+- [How to pick more beautiful colors for your data visualizations](https://blog.datawrapper.de/beautifulcolors/)
+
