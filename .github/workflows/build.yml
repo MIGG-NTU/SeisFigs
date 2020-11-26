@@ -60,6 +60,8 @@ jobs:
           gmt --version
           ls /usr/share/miniconda/
 
+
+      # build & deploy
       - name: Build sphinx document
         run: |
           make html
