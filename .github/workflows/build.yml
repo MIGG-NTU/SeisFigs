@@ -25,6 +25,7 @@ jobs:
         with:
           python-version: '3.8'
 
+      # Test Cache
       - name: Cache conda pkgs
         uses: actions/cache@v2
         env:
@@ -36,6 +37,7 @@ jobs:
           #restore-keys: |
           #  ${{ runner.os }}-build-${{ env.cache-name }}-
 
+      # Install conda
       - name: Set up conda
         uses: s-weigand/setup-conda@v1
         with:
@@ -44,6 +46,7 @@ jobs:
           conda --version
           which python
 
+      # Install dependencies
       - name: Install dependencies
         run: |
           # Install Python dependencies
