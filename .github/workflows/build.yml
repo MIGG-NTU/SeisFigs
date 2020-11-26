@@ -26,16 +26,24 @@ jobs:
           python-version: '3.8'
 
       # Test Cache
-      - name: Cache conda pkgs
+      #- name: Cache conda pkgs
+      #  uses: actions/cache@v2
+      #  env:
+      #    cache-name: cache-conda-pkgs
+      #  with:
+      #    path: |
+      #      /usr/share/miniconda/
+      #    key: ${{ runner.os }}-deploy-${{ env.cache-name }}-condapkgs
+      #    #restore-keys: |
+      #    #  ${{ runner.os }}-build-${{ env.cache-name }}-
+
+      - name: Cache pip
         uses: actions/cache@v2
-        env:
-          cache-name: cache-conda-pkgs
         with:
-          path: |
-            /usr/share/miniconda/
-          key: ${{ runner.os }}-deploy-${{ env.cache-name }}-condapkgs
-          #restore-keys: |
-          #  ${{ runner.os }}-build-${{ env.cache-name }}-
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       # Install conda
       - name: Set up conda
