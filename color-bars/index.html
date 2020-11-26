@@ -176,7 +176,7 @@ gmt end show
 <a class="reference internal image-reference" href="../_images/index-gmtplot-0.png"><img alt="../_images/index-gmtplot-0.png" src="../_images/index-gmtplot-0.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">Seismic velocity color bar</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Or you can use the default GMT_seis color bar.</p>
+<p>Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity-gmtseis png,pdf
     makecpt -Cseis -T-6/6/0.5 -Z -D &gt; gmt-seis.cpt
     gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cgmt-seis.cpt

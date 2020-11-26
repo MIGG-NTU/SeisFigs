@@ -22,7 +22,7 @@ CUB use a very beautiful `seismic velocity color bar <https://raw.githubusercont
         gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cseismic-velocity.cpt
     gmt end show
 
-Or you can use the default GMT_seis color bar.
+Or you can use the default `seis <https://docs.gmt-china.org/latest/cpt/builtin-cpt/#>`__ color bar in GMT.
 
 .. gmtplot::
    :language: bash
