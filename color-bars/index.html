@@ -176,7 +176,7 @@ gmt end show
 <a class="reference internal image-reference" href="../_images/index-gmtplot-0.png"><img alt="../_images/index-gmtplot-0.png" src="../_images/index-gmtplot-0.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">Seismic velocity color bar</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT. If you’d like to output the generated color bar to a file, remember to use the argument <code class="docutils literal notranslate"><span class="pre">-H</span></code> of <span class="xref std std-doc">gmt:makecpt</span>. Meanwhile, the file name cannot be same as the used built-in cpt name (e.g., seis.cpt in this example).</p>
+<p>Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT. If you’d like to output the generated color bar to a file, remember to use the argument <code class="docutils literal notranslate"><span class="pre">-H</span></code> of <a class="reference external" href="https://docs.generic-mapping-tools.org/latest/makecpt">makecpt</a>. Meanwhile, the file name cannot be same as the used built-in cpt name (e.g., seis.cpt in this example).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin gmt_seis png,pdf
     gmt makecpt -Cseis -T-6/6/0.5 -Z -D
     gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
