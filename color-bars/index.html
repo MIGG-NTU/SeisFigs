@@ -178,7 +178,7 @@ gmt end show
 </div>
 <p>Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity-gmtseis png,pdf
-    makecpt -Cseis -T-6/6/0.5 -Z -D &gt; gmt-seis.cpt
+    gmt makecpt -Cseis -T-6/6/0.5 -Z -D &gt; gmt-seis.cpt
     gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cgmt-seis.cpt
 gmt end show
 </pre></div>
@@ -198,6 +198,16 @@ gmt end show
 <p class="caption"><span class="caption-text">Seismic velocity color bar</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity-gmtseis-2 png,pdf
+    gmt makecpt -Cseis -T-6/6/0.5 -Z -D &gt; gmt-seis.cpt
+    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/index-gmtplot-3.png"><img alt="../_images/index-gmtplot-3.png" src="../_images/index-gmtplot-3.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Seismic velocity color bar (GMT_seis)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="topography">
 <h2>Topography<a class="headerlink" href="#topography" title="Permalink to this headline">¶</a></h2>
