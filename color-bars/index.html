@@ -176,6 +176,17 @@ gmt end show
 <a class="reference internal image-reference" href="../_images/index-gmtplot-0.png"><img alt="../_images/index-gmtplot-0.png" src="../_images/index-gmtplot-0.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">Seismic velocity color bar</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
+<p>Or you can use the default GMT_seis color bar.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity-gmtseis png,pdf
+    makecpt -Cseis -T-6/6/0.5 -Z -D &gt; gmt-seis.cpt
+    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cgmt-seis.cpt
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../build/gmtplot_directive/color-bars/index-gmtplot-1.*"><img alt="../build/gmtplot_directive/color-bars/index-gmtplot-1.*" src="../build/gmtplot_directive/color-bars/index-gmtplot-1.*" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Seismic velocity color bar (GMT_seis)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="topography">
 <h2>Topography<a class="headerlink" href="#topography" title="Permalink to this headline">¶</a></h2>
