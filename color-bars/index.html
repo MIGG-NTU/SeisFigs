@@ -168,7 +168,7 @@
 <h2>Seismic Velocity<a class="headerlink" href="#seismic-velocity" title="Permalink to this headline">¶</a></h2>
 <p>CUB use a very beautiful <a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/seismic-velocity.cpt">seismic velocity color bar</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity png,pdf
-    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cseismic-velocity.cpt
+    gmt colorbar -Cseismic-velocity.cpt -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
 gmt end show
 </pre></div>
 </div>
@@ -176,37 +176,44 @@ gmt end show
 <a class="reference internal image-reference" href="../_images/index-gmtplot-0.png"><img alt="../_images/index-gmtplot-0.png" src="../_images/index-gmtplot-0.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">Seismic velocity color bar</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity-gmtseis png,pdf
-    gmt makecpt -Cseis -T-6/6/0.5 -Z -D &gt; gmt-seis.cpt
-    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cgmt-seis.cpt
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT. If you’d like to output the generated color bar to a file, remember to use the argument <code class="docutils literal notranslate"><span class="pre">-H</span></code> of <span class="xref std std-doc">gmt:makecpt</span>. Meanwhile, the file name cannot be same as the used built-in cpt name (e.g., seis.cpt in this example).
+=======
+Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; main</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin gmt_seis png,pdf
+    gmt makecpt -Cseis -T-6/6/0.5 -Z -D
+    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
 gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="../build/gmtplot_directive/color-bars/index-gmtplot-1.*"><img alt="../build/gmtplot_directive/color-bars/index-gmtplot-1.*" src="../build/gmtplot_directive/color-bars/index-gmtplot-1.*" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-text">Seismic velocity color bar (GMT_seis)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../_images/index-gmtplot-1.png"><img alt="../_images/index-gmtplot-1.png" src="../_images/index-gmtplot-1.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">GMT seis color bar</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>CUB use a very beautiful <a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/seismic-velocity.cpt">seismic velocity color bar</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity png,pdf
-    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cseismic-velocity.cpt
+<p>Test command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin gmt_seis png,pdf
+    gmt makecpt -Cseis -T-6/6/0.5 -Z -D -H &gt; gmt_seis.cpt
+    gmt colorbar -Cgmt_seis.cpt -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
 gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/index-gmtplot-2.png"><img alt="../_images/index-gmtplot-2.png" src="../_images/index-gmtplot-2.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-text">Seismic velocity color bar</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">GMT seis color bar (use command)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>Or you can use the default <a class="reference external" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt/#">seis</a> color bar in GMT.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin seismic-velocity-gmtseis-2 png,pdf
-    gmt makecpt -Cseis -T-6/6/0.5 -Z -D &gt; gmt-seis.cpt
-    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
-gmt end show
+<p>Test Bash</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+gmt begin gmt_seis png,pdf
+gmt makecpt -Cseis -T-6/6/0.5 -Z -D -H &gt; gmt_seis.cpt
+gmt colorbar -Cgmt_seis.cpt -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
+gmt end
+rm gmt_seis.cpt
 </pre></div>
 </div>
-<div class="figure align-center" id="id4">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/index-gmtplot-3.png"><img alt="../_images/index-gmtplot-3.png" src="../_images/index-gmtplot-3.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-text">Seismic velocity color bar (GMT_seis)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="topography">
