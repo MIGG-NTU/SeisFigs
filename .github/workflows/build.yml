@@ -50,10 +50,6 @@ jobs:
       #  uses: s-weigand/setup-conda@v1
       #  with:
       #    activate-conda: false
-      #- run: |
-      #    conda --version
-      #    which python
-
 
       # Test Cache miniconda
       - name: Cache conda
@@ -103,7 +99,6 @@ jobs:
           # Install GMT
           conda install gmt -c conda-forge
           gmt --version
-          ls /usr/share/miniconda/
 
 
       # build & deploy
