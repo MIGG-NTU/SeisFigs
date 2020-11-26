@@ -38,12 +38,13 @@ jobs:
           # Install Python dependencies
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # Install GMT
-          conda install gmt -c conda-forge
-          gmt --version
           # Install SourceCodePro fonts
           sudo git clone --branch release --depth 1 'https://github.com/adobe-fonts/source-code-pro.git' /usr/share/fonts/opentype
           fc-cache -f -v
+          # Install GMT
+          conda install gmt -c conda-forge
+          gmt --version
+          ls /usr/share/miniconda/
 
       - name: Build sphinx document
         run: |

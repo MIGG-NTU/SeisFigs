@@ -63,6 +63,3 @@ html_context = {
     'theme_vcs_pageview_mode': 'blob',
 }
 
-intersphinx_mapping = {
-    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
-}
