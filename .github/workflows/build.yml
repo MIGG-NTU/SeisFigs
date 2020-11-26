@@ -13,35 +13,98 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["ubuntu-latest"]
+        python-version: ["3.8"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Fetch all history so that Hugo .GitInfo and .Lastmod work
 
+      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          #python-version: '3.8'
+          python-version: ${{ matrix.python-version }}
 
+
+      # Test Cache
+      #- name: Cache conda pkgs
+      #  uses: actions/cache@v2
+      #  env:
+      #    cache-name: cache-conda-pkgs
+      #  with:
+      #    path: |
+      #      /usr/share/miniconda/
+      #    key: ${{ runner.os }}-deploy-${{ env.cache-name }}-condapkgs
+      #    #restore-keys: |
+      #    #  ${{ runner.os }}-build-${{ env.cache-name }}-
+
+      # Install s-weigand/conda
       - name: Set up conda
         uses: s-weigand/setup-conda@v1
         with:
           activate-conda: false
+
+
+      # Test Cache miniconda
+      #- name: Cache conda
+      #  uses: actions/cache@v1
+      #  env:
+      #    # Increase this value to reset cache if etc/example-environment.yml has not changed
+      #    CACHE_NUMBER: 0
+      #  with:
+      #    path: ~/conda_pkgs_dir
+      #    key:
+      #      ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
+
+      # Install miniconda
+      #- uses: conda-incubator/setup-miniconda@v2
+      #  with:
+      #    activate-environment: anaconda-client-env
+      #    channels: conda-forge,defaults
+      #    channel-priority: strict
+      #    environment-file: environment-caching.yml
+      #    python-version: ${{ matrix.python-version }}
+      #    use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
+      #    auto-activate-base: false
+
+
       - run: |
           conda --version
           which python
 
+      # Test pip Cache
+      #- name: Cache pip
+      #  uses: actions/cache@v2
+      #  with:
+      #    path: ~/.cache/pip
+      #    key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+      #    restore-keys: |
+      #      ${{ runner.os }}-pip-
+      #      ${{ runner.os }}-
+
+
+      # Install dependencies
       - name: Install dependencies
         run: |
+          # Install Python dependencies
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          conda install gmt -c conda-forge
-          gmt --version
+          # Install SourceCodePro fonts
           sudo git clone --branch release --depth 1 'https://github.com/adobe-fonts/source-code-pro.git' /usr/share/fonts/opentype
           fc-cache -f -v
+          # Install GMT
+          conda install gmt -c conda-forge
+          gmt --version
 
+
+      # build & deploy
       - name: Build sphinx document
         run: |
           make html

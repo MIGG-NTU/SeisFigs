@@ -19,19 +19,19 @@ CUB use a very beautiful `seismic velocity color bar <https://raw.githubusercont
     :caption: Seismic velocity color bar
 
     gmt begin seismic-velocity png,pdf
-        gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cseismic-velocity.cpt
+        gmt colorbar -Cseismic-velocity.cpt -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
     gmt end show
 
-Or you can use the default `seis <https://docs.gmt-china.org/latest/cpt/builtin-cpt/#>`__ color bar in GMT.
+Or you can use the default `seis <https://docs.gmt-china.org/latest/cpt/builtin-cpt/#>`__ color bar in GMT. If you'd like to output the generated color bar to a file, remember to use the argument ``-H`` of `makecpt <https://docs.generic-mapping-tools.org/latest/makecpt>`__. Meanwhile, the file name cannot be same as the used built-in cpt name (e.g., seis.cpt in this example).
 
 .. gmtplot::
    :language: bash
    :width: 80%
-   :caption: Seismic velocity color bar (GMT_seis)
+   :caption: GMT seis color bar
 
-    gmt begin seismic-velocity-gmtseis png,pdf
-        makecpt -Cseis -T-6/6/0.5 -Z -D > gmt-seis.cpt
-        gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1 -Cgmt-seis.cpt
+    gmt begin gmt_seis png,pdf
+        gmt makecpt -Cseis -T-6/6/0.5 -Z -D
+        gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
     gmt end show
 
 
@@ -39,5 +39,4 @@ Topography
 ----------
 
 ``TODO``
-
 

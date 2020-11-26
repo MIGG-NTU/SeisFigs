@@ -1,0 +1,7 @@
+name: anaconda-client-env
+dependencies:
+  - gmt=6.1.1
+  - python=3.8
+  - black
+  - anaconda-client
+
