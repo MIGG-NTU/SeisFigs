@@ -25,6 +25,17 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: Cache conda pkgs
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-conda-pkgs
+        with:
+          path: |
+            /usr/share/miniconda/
+          key: ${{ runner.os }}-deploy-${{ env.cache-name }}-condapkgs
+          #restore-keys: |
+          #  ${{ runner.os }}-build-${{ env.cache-name }}-
+
       - name: Set up conda
         uses: s-weigand/setup-conda@v1
         with:
