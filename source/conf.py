@@ -54,7 +54,6 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-
 html_context = {
     'display_github': True,
     'github_user': 'MIGG-NTU',
@@ -62,4 +61,8 @@ html_context = {
     'github_version': 'main',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
+}
+
+intersphinx_mapping = {
+    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
 }
