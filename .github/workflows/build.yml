@@ -13,7 +13,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      #fail-fast: false
+      matrix:
+        os: ["ubuntu-latest"]
+        python-version: ["3.8"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -65,7 +71,9 @@ jobs:
           activate-environment: anaconda-client-env
           channel-priority: strict
           environment-file: environment-caching.yml
+          python-version: 3.8
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
+          auto-activate-base: true
 
       - run: |
           conda --version
