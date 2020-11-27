@@ -2,6 +2,7 @@ Demo
 ====
 
 .. plot::
+   :width: 80%
 
    import matplotlib.pyplot as plt
 
