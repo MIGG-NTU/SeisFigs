@@ -28,8 +28,10 @@ author = 'MIG'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'matplotlib.sphinxext.plot_directive',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.githubpages',
-    'sphinx_gmt.gmtplot'
+    'sphinx_gmt.gmtplot',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -63,3 +65,10 @@ html_context = {
     'theme_vcs_pageview_mode': 'blob',
 }
 
+
+intersphinx_mapping = {
+    'gmt_china': ('https://docs.gmt-china.org/6.1/', None),
+    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
+}
+
+plot_include_source = True
