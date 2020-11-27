@@ -1,0 +1,6 @@
+Matplotlib
+==========
+
+.. toctree::
+
+   demo
