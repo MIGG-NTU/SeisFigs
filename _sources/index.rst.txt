@@ -7,4 +7,5 @@ SeisFigs_Examples
 
    color-bars/index
    profiles/index
+   matplotlib/index
    references/index
