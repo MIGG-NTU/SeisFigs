@@ -44,7 +44,7 @@ There are some more alternative CPTs that may work well for seismic tomography:
    :caption: More Seis color bars
 
     gmt begin more_seis_cpts png,pdf
-        gmt makecpt -CBlueWhiteOrangeRed.cpt -T-6/6/0.5 -Z -D
+        gmt makecpt -CBlueWhiteOrangeRed.cpt -T-6/6 -I -D
         gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
         gmt makecpt -Croma.cpt -T-6/6/0.5 -Z -D
         gmt colorbar -Dx0c/-2c+w10c/0.2c+h+e+n -Bxa1
