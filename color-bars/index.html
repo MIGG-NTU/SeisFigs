@@ -192,7 +192,7 @@ gmt end show
 <a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/BlueWhiteOrangeRed.cpt">BlueWhiteOrangeRed</a>.
 <a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/roma.cpt">Roma</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin more_seis_cpts png,pdf
-    gmt makecpt -CBlueWhiteOrangeRed.cpt -T-6/6/0.5 -Z -D
+    gmt makecpt -CBlueWhiteOrangeRed.cpt -T-6/6 -I -D
     gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
     gmt makecpt -Croma.cpt -T-6/6/0.5 -Z -D
     gmt colorbar -Dx0c/-2c+w10c/0.2c+h+e+n -Bxa1
