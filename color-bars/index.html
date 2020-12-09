@@ -188,6 +188,21 @@ gmt end show
 <a class="reference internal image-reference" href="../_images/index-gmtplot-1.png"><img alt="../_images/index-gmtplot-1.png" src="../_images/index-gmtplot-1.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">GMT seis color bar</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
+<p>There are some more alternative CPTs that may work well for seismic tomography:
+<a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/BlueWhiteOrangeRed.cpt">BlueWhiteOrangeRed</a>.
+<a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/roma.cpt">Roma</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin more_seis_cpts png,pdf
+    gmt makecpt -CBlueWhiteOrangeRed.cpt -T-6/6/0.5 -Z -D
+    gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
+    gmt makecpt -Croma.cpt -T-6/6/0.5 -Z -D
+    gmt colorbar -Dx0c/-2c+w10c/0.2c+h+e+n -Bxa1
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/index-gmtplot-2.png"><img alt="../_images/index-gmtplot-2.png" src="../_images/index-gmtplot-2.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">More Seis color bars</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="topography">
 <h2>Topography<a class="headerlink" href="#topography" title="Permalink to this headline">¶</a></h2>
