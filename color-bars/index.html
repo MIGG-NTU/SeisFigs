@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Color Bars &mdash; SeisFigs_Examples  documentation</title>
   
@@ -13,10 +13,16 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -26,17 +32,17 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Profiles" href="../profiles/index.html" />
+    <link rel="next" title="Matplotlib" href="../matplotlib/index.html" />
     <link rel="prev" title="SeisFigs_Examples" href="../index.html" /> 
 </head>
 
@@ -51,7 +57,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SeisFigs_Examples
+            <a href="../index.html" class="icon icon-home"> SeisFigs_Examples
           
 
           
@@ -84,12 +90,9 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Color Bars</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#seismicity">Seismicity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#seismic-velocity">Seismic Velocity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#topography">Topography</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../profiles/index.html">Profiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matplotlib/index.html">Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
 </ul>
@@ -132,6 +135,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -143,7 +148,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             
               <a href="https://github.com/MIGG-NTU/SeisFigs_Examples/blob/main/source/color-bars/index.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -161,10 +166,6 @@
             
   <div class="section" id="color-bars">
 <h1>Color Bars<a class="headerlink" href="#color-bars" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="seismicity">
-<h2>Seismicity<a class="headerlink" href="#seismicity" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">TODO</span></code></p>
-</div>
 <div class="section" id="seismic-velocity">
 <h2>Seismic Velocity<a class="headerlink" href="#seismic-velocity" title="Permalink to this headline">¶</a></h2>
 <p>CUB use a very beautiful <a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/seismic-velocity.cpt">seismic velocity color bar</a>.</p>
@@ -188,9 +189,11 @@ gmt end show
 <a class="reference internal image-reference" href="../_images/index-gmtplot-1.png"><img alt="../_images/index-gmtplot-1.png" src="../_images/index-gmtplot-1.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">GMT seis color bar</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>There are some more alternative CPTs that may work well for seismic tomography:
-<a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/BlueWhiteOrangeRed.cpt">BlueWhiteOrangeRed</a>.
-<a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/roma.cpt">Roma</a>.</p>
+<p>There are some more alternative CPTs that may work well for seismic tomography:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/BlueWhiteOrangeRed.cpt">BlueWhiteOrangeRed</a></p></li>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/roma.cpt">Roma</a></p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin more_seis_cpts png,pdf
     gmt makecpt -CBlueWhiteOrangeRed.cpt -T-6/6 -I -D
     gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
@@ -204,10 +207,6 @@ gmt end show
 <p class="caption"><span class="caption-text">More Seis color bars</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="topography">
-<h2>Topography<a class="headerlink" href="#topography" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">TODO</span></code></p>
-</div>
 </div>
 
 
@@ -215,37 +214,29 @@ gmt end show
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../profiles/index.html" class="btn btn-neutral float-right" title="Profiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../index.html" class="btn btn-neutral float-left" title="SeisFigs_Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../matplotlib/index.html" class="btn btn-neutral float-right" title="Matplotlib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="SeisFigs_Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, MIG
+        &#169; Copyright 2020, MIG.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
