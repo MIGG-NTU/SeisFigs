@@ -6,6 +6,5 @@ SeisFigs_Examples
    :hidden:
 
    color-bars/index
-   profiles/index
    matplotlib/index
    references/index

@@ -1,13 +1,6 @@
 Color Bars
 ==========
 
-
-Seismicity
-----------
-
-``TODO``
-
-
 Seismic Velocity
 ----------------
 
@@ -34,9 +27,10 @@ Or you can use the :doc:`built-in cpt <gmt_china:cpt/builtin-cpt>` color bar in 
         gmt colorbar -Dx0c/0c+w10c/0.2c+h+e+n -Bxa1
     gmt end show
 
-There are some more alternative CPTs that may work well for seismic tomography: 
-`BlueWhiteOrangeRed <https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/BlueWhiteOrangeRed.cpt>`__.
-`Roma <https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/roma.cpt>`__.
+There are some more alternative CPTs that may work well for seismic tomography:
+
+- `BlueWhiteOrangeRed <https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/BlueWhiteOrangeRed.cpt>`__
+- `Roma <https://raw.githubusercontent.com/MIGG-NTU/SeisFigs_Examples/main/source/color-bars/roma.cpt>`__
 
 .. gmtplot::
    :language: bash
@@ -49,10 +43,3 @@ There are some more alternative CPTs that may work well for seismic tomography:
         gmt makecpt -Croma.cpt -T-6/6/0.5 -Z -D
         gmt colorbar -Dx0c/-2c+w10c/0.2c+h+e+n -Bxa1
     gmt end show
-
-
-Topography
-----------
-
-``TODO``
-
